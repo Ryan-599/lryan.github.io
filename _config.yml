@@ -22,14 +22,8 @@ title: Lryan's Blog
 email: lonxinyi@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
   这里是Lryan的博客，我将在这里记录我的学习生活
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "lryan599.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  lryan599
-
 # Build settings
 theme: jekyll-theme-slate
-plugins:
-  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
