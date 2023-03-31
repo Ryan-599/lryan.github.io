@@ -4,7 +4,7 @@
 title: Lryan's blog
 layout: default
 ---
-# Here is Lryan's blog!
+# 最近上传的博客
 
 <ul>
   {% for post in site.posts %}
@@ -13,3 +13,8 @@ layout: default
     </li>
   {% endfor %}
 </ul>
+
+# 关于我
+1. HITSZ-CS在读
+2. Github新人
+3. ACGN爱好者
