@@ -16,5 +16,4 @@ layout: default
 
 # 关于我
 1. HITSZ-CS在读
-2. Github新人
-3. ACGN爱好者
+2. ACGN爱好者

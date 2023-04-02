@@ -1,0 +1,54 @@
+---
+layout: default
+title:  "算法导论经典算法集合"
+date:   2023-04-02 23:38:00 +0800
+categories: Algorithms
+---
+# 目录
+1. Bellman-ford 最短路
+2. Dijkstra 最短路
+3. Floyd 最短路
+# 正文
+1. Bellman-ford 最短路
+
+        relax(u,v)
+            // d[u]是s到u最短路径的估计
+            // w是u到v的权值
+            if d[v] > d[u] + w then 
+                d[v] = d[u] + w
+        
+        Bellman-ford(G,S)
+            d[] = INIFY
+            d[s] = 0
+            for i = 0 to |G.V| - 1 do
+                foreach e in G.E do
+                    relax(e)
+            foreach e in E do
+                // 负环
+                if(d[v] > d[u] + w):
+                    return false
+
+2. Dijkstra-单源最短路  
+
+        Dijkstra(G,S)
+            d[] = INIFY
+            C = φ
+            d[s] = 0
+            H = INIT_HEAP(d[])
+            while H is empty do:
+                u = H.getMin()
+                C = C ∪ {V}
+                foreach v in u.adj do
+                    relax(u,v)
+
+3. Floyd
+
+        Floyd(G)
+            D = G
+            for k = 1 to n do
+                for i = 1 to n do
+                    for j = 1 to n do
+                        if D[i][j] > D[i][k] + D[k][j]:
+                            D[i][j] = D[i][k] + D[k][j]
+                            P[i][j] = K
+            return D
