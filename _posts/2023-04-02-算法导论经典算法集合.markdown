@@ -44,7 +44,9 @@ categories: Algorithms
 3. Floyd
 
         Floyd(G)
-            D = G
+            // D[i][j]表示vi到vj的最短距离
+            // DK[i][j]表示只用v1,v2,...,vk从vi到vj的最短距离
+            D = INIT(G)
             for k = 1 to n do
                 for i = 1 to n do
                     for j = 1 to n do
@@ -52,3 +54,4 @@ categories: Algorithms
                             D[i][j] = D[i][k] + D[k][j]
                             P[i][j] = K
             return D
+        
