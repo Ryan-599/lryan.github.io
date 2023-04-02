@@ -32,11 +32,11 @@ categories: Algorithms
 
         Dijkstra(G,S)
             d[] = INIFY
-            C = φ
+            C = φ   // C是已选节点集合
             d[s] = 0
-            H = INIT_HEAP(d[])
-            while H is empty do:
-                u = H.getMin()
+            H = INIT_HEAP(G.V)  
+            while H is not empty do:
+                u = H.getMin()  // u是G.V-C中与C距离最近的节点
                 C = C ∪ {V}
                 foreach v in u.adj do
                     relax(u,v)
