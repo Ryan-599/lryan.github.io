@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "算法导论经典算法集合"
+title:  "算法导论经典算法"
 date:   2023-04-02 23:38:00 +0800
 categories: Algorithms
 ---
@@ -8,6 +8,7 @@ categories: Algorithms
 1. Bellman-ford 最短路
 2. Dijkstra 最短路
 3. Floyd 最短路
+
 # 正文
 1. Bellman-ford 最短路
 
@@ -28,30 +29,29 @@ categories: Algorithms
                 if(d[v] > d[u] + w):
                     return false
 
-2. Dijkstra-单源最短路  
+2. Dijkstra 最短路  
 
         Dijkstra(G,S)
-            d[] = INIFY
-            C = φ   // C是已选节点集合
-            d[s] = 0
-            H = INIT_HEAP(G.V)  
-            while H is not empty do:
-                u = H.getMin()  // u是G.V-C中与C距离最近的节点
-                C = C ∪ {V}
+            d[foreach u in G.V] = INIFY
+            C = {s}   // C是已选节点集合
+            d[s] = 0  
+            while G.V-C is not empty do:
+                u是(G.V-C)中与C距离最近的节点
+                C = C ∪ {u}
                 foreach v in u.adj do
                     relax(u,v)
 
-3. Floyd
+3. Floyd 最短路
 
         Floyd(G)
-            // D[i][j]表示vi到vj的最短距离
-            // DK[i][j]表示只用v1,v2,...,vk从vi到vj的最短距离
             D = INIT(G)
             for k = 1 to n do
+                // Dk[i][j]表示只用v1,v2,...,vk从vi到vj的最短距离
                 for i = 1 to n do
                     for j = 1 to n do
                         if D[i][j] > D[i][k] + D[k][j]:
                             D[i][j] = D[i][k] + D[k][j]
-                            P[i][j] = K
+                            P[i][j] = k
+            // D[i][j]表示vi到vj的最短距离                
             return D
         
