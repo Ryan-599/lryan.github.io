@@ -36,7 +36,7 @@ categories: Algorithms
             C = {s}   // C是已选节点集合
             d[s] = 0  
             while G.V-C is not empty do:
-                u是(G.V-C)中与C距离最近的节点
+                u是G.V-C中，使得d[u]最小的节点
                 C = C ∪ {u}
                 foreach v in u.adj do
                     relax(u,v)
