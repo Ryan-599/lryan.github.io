@@ -4,6 +4,19 @@ title:  "论文-A Thousand Ways to Pack the Bin"
 date:   2023-06-24 23:38:00 +0800
 categories: paper
 ---
+<head>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    processEscapes: true
+  }
+};
+</script>
 
 # 目录
 
@@ -32,7 +45,13 @@ categories: paper
 
       Waste-Map改善：使用Shelf算法进行装箱时，每一个货架上半部分的空间往往是空闲的。使用Guillotine算法记录并追踪每一层的空闲空间，对一个矩形进行装箱时，优先使用Guillotine算法将该矩形装入这些空闲空间中。如果不能装入空闲空间，则照常使用Shelf算法。
 
-   - Guillotine算法
+   - Guillotine算法  
+      Guillotine算法是一种剪切的方法。它的基本原理是将一个空闲的矩形逐步分解成多个空闲的小矩形。分解的方法是先将空闲的矩形直接截去一个角，然后沿着截去的角的边，以垂直或水平的方法将剩余空间截成两个较小的空闲矩形。如下图所示：
+
+      ![picture 1](..\_site\assets\images\d940acc30d06878a7cfece2248d7be4be01aa0b169597b10b0653d7c5601c7d1.png)  
+
+      Guillotine算法维护一个空闲矩形列表${F_1,...,F_n}$，该列表实际上就是对箱中剩余空间的一个划分。初始时，该列表只有一个空闲矩形块，即箱本身。在对一个矩形进行装箱时，从列表中选取一个能装入该矩形的空闲矩形$F_i$并将该矩形放在$F_i$的左下角，进行上述的剪切操作，得到两个新的空闲矩形$F_i'$和$F_i''$并加入到列表中。
+
    - 最优矩形算法
    - Skyline算法
 3. 
