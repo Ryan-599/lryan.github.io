@@ -29,5 +29,6 @@ categories: paper
      - Best Height Fit：对一个矩形进行装箱时，从下到上扫描一遍所有货架，选择能装入该矩形的货架中，高度最小的那一个。
      - Best Area Fit：对一个矩形进行装箱时，从下到上扫描一遍所有货架，选择能装入该矩形的货架中，可用面积最小的那一个。
      - Worst Width Fit
+     - 
    - 
 3. 
