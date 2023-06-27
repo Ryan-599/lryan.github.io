@@ -102,3 +102,18 @@ MathJax = {
       Waste-Map改善：与Shelf算法相同，使用Guillotine算法管理可能出现的浪费空间。
 
 3. 一般性的算法改善方法
+   - 多箱情况时，选择合适的箱子
+     - 类似于上述的启发性规则，可分为Next Fit、First Fit、Best Fit。
+   - 对输入的目标矩形进行排序
+     - 有多种可行的排序规则，如按面积排序、按宽排序、按高排序、按周长排序、按宽高比例排序等。
+   - 全局选择目标矩形R
+     - 对下一个目标矩形R，不在按照等候列表中的下一个矩形来取。而是遍历整个等待列表中的目标矩形，选取其中最符合当前启发式规则的目标矩形。这种操作使得对目标矩形排序变得没有太大意义。
+
+4. 测试结果
+   - Shelf算法的装箱效果一般。online情况下，与最优相比，最坏情况下需要多花一倍的箱子数量才能装完，平均也需要花1.5倍左右。在offline的情况下，按面积降序排序并按Bin First Fit选择箱子似乎是最佳选择，但也平均也需要花费1.077倍，并且最差情况下为1.571倍。
+   - Guillotine算法在使用矩形合并优化的情况下效果更好。online情况下，最好情况是GUILLOTINE-MINAS-RM-BNF-BAF，平均花费1.445倍。offline情况下，1.016是最优情况。
+   - 最大矩形算法是目前表现最好的算法。online情况下，MAXRECTS-BSSF-BNF最好情况是1.408倍，最坏是1.788倍。如果允许多个箱子同时装箱，那么MAXRECTS-BSSFBBF最优是1.041倍，最坏是1.130倍。offline情况下，MAXRECTS-BSSF-BBF-GLOBAL能取得最优，为1.005倍，最坏也只为1.068倍。
+   - Skyline算法的表现比较有趣。在online情况下，Skyline算法的表现是最优的，SKYLINE-BL-WM-BNF能达到惊人的1.392(1.654)，如果允许多个箱子同时装箱，SKYLINE-BL-WM-BFF也能达到1.056(1.158)的优秀水平，比最大矩形算法稍差。在offline的情况下，SKYLINE-MWWM-BFF-DESCSS能获得1.013(1.090)的好成绩，比Guillotine稍好，比MAXRECTS稍差。但需要指出的是，Skyline算法的运行时间比MAXRECTS好得多。
+
+5. 结论和未来的工作
+   据表，MAXRECTS算法的整体表现是最好的。当online且只允许对一个箱子装箱时，SKYLINE算法表最好（-BNF）。GUILLOTINE变体比MAXRECTS算法快得多，但性能也稍差。Shelf算法实现简单，但表现也最差。
