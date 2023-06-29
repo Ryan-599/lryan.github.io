@@ -13,6 +13,7 @@ categories: paper
 MathJax = {
   tex: {
     inlineMath: [['$', '$']],
+    blockMath: [['$$', '$$']],
     processEscapes: true
   }
 };
@@ -42,14 +43,14 @@ MathJax = {
    - 给定集合$\mathcal{S} \in 2^N$，代表不能装入单独一个箱子的目标矩形集合。
 
    于是问题可以使用以下几条约束来进行描述：
-   $$ min\ z = \sum_{i \in B}{y_i}, \tag{1}$$
-   $$ \sum_{i \in B}{x_{ij}=1},j \in N, \tag{2}$$
-   $$ \sum_{j \in N}{a_{i}x_{ij} \le Ay_i}, i \in B, \tag{3}$$
-   $$ \sum_{j \in S}{x_{ij} \le |S|-1}, i \in B, S \in \mathcal{S}, \tag{4}$$
-   $$ x_{ij} \in \{0,1\}, i \in B, j \in N, \tag{5}$$
-   $$ y_i \in \{0,1\}, i \in B, \tag{6}$$
+   $$ min\ z = \sum_{i \in B}{y_i}, \tag{1} $$
+   $$ \sum_{i \in B}{x_{ij}=1},j \in N, \tag{2} $$
+   $$ \sum_{j \in N}{a_{i}x_{ij} \le Ay_i}, i \in B, \tag{3} $$
+   $$ \sum_{j \in S}{x_{ij} \le |S|-1}, i \in B, S \in \mathcal{S}, \tag{4} $$
+   $$ x_{ij} \in \{0,1\}, i \in B, j \in N, \tag{5} $$
+   $$ y_i \in \{0,1\}, i \in B, \tag{6} $$
 
-   其中，(1)式要求打开的箱子数尽可能少；(2)式要求每个目标矩形都要被分配进某一个箱子中；(3)式要求对某个特定的箱子，所装入的目标矩形的面积不能超过箱子面积；(4)式要求对某个特定的箱子，不能完全装入$mathcal{S}$中的任一子集；(5)(6)是二值性要求的限制。(4)式中还需要注意的点是，判断给定$S$是否属于$\mathcal{S}$是NP困难的，这对应于典型的2D-OPP问题。
+   其中，(1)式要求打开的箱子数尽可能少；(2)式要求每个目标矩形都要被分配进某一个箱子中；(3)式要求对某个特定的箱子，所装入的目标矩形的面积不能超过箱子面积；(4)式要求对某个特定的箱子，不能完全装入$\mathcal{S}$中的任一子集；(5)(6)是二值性要求的限制。(4)式中还需要注意的点是，判断给定$S$是否属于$\mathcal{S}$是NP困难的，这对应于典型的2D-OPP问题。
 
 2. 经典算法
    - **Shelf算法**
