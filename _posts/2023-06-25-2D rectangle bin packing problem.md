@@ -12,8 +12,11 @@ categories: paper
 <script> 
 MathJax = {
   tex: {
-    inlineMath: [['$', '$']],
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
     processEscapes: true
+  },
+  svg:{
+   fontCache:'global'
   }
 };
 </script>
@@ -42,7 +45,7 @@ MathJax = {
    - 给定集合$\mathcal{S} \in 2^N$，代表不能装入单独一个箱子的目标矩形集合。
 
    于是问题可以使用以下几条约束来进行描述：
-   
+
    $$ min\ z = \sum_{i \in B}{y_i}, \tag{1} $$
    $$ \sum_{i \in B}{x_{ij}=1},j \in N, \tag{2} $$
    $$ \sum_{j \in N}{a_{i}x_{ij} \le Ay_i}, i \in B, \tag{3} $$
