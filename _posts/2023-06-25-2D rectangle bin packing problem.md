@@ -12,7 +12,8 @@ categories: paper
 <script> 
 MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
     processEscapes: true
   },
   svg:{
@@ -54,6 +55,13 @@ MathJax = {
    $$ y_i \in \{0,1\}, i \in B, \tag{6} $$
 
    其中，(1)式要求打开的箱子数尽可能少；(2)式要求每个目标矩形都要被分配进某一个箱子中；(3)式要求对某个特定的箱子，所装入的目标矩形的面积不能超过箱子面积；(4)式要求对某个特定的箱子，不能完全装入$\mathcal{S}$中的任一子集；(5)(6)是二值性要求的限制。(4)式中还需要注意的点是，判断给定$S$是否属于$\mathcal{S}$是NP困难的，这对应于典型的2D-OPP问题。
+
+   与2D-BPP问题相对应，还有一些变式问题：
+   - 2D-SPP(2D Strip Packing Problem)：定宽，找高的最小值
+   - 2D-BPP(2D Bin Packing Problem)：定宽定高，找所需箱子的最少数量
+   - 2D-CSP(2D Cutting Stock Problem)：2D-BPP的一种推广
+   - 2D-KP(2D Knapsack Problem)：找到价值最大的装箱
+   - 2D-OPP(2D Orthogonal Packing Problem)：验证可解装箱的存在性
 
 2. 经典算法
    - **Shelf算法**
